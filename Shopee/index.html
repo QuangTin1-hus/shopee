@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/fonts/font_awesome/css/all.min.css">
+    <link rel="stylesheet" href="./assets/fonts/font_awesome/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="grid">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--separate">Kênh Người Bán</li>
+                        <li class="header__navbar-item header__navbar-item--separate">Trở thành Người bán Shopee</li>
+                        <li class="header__navbar-item header__navbar--qrcode header__navbar-item--separate">
+                            Tải ứng dụng
+                            <div class="header__qrcode">
+                                <img src="./assets/img/QRcode.png" alt="QRcode" class="header__qrcode-img">
+                                <div class="header__qrcode-app">
+                                    <a href="" class="header__qrcode-link">
+                                        <img src="./assets/img/appstore.png" alt="appstore" class="header__qr-download">
+                                    </a>
+                                    <a href="" class="header__qrcode-link">
+                                        <img src="./assets/img/googleplay.png" alt="googleplay"
+                                            class="header__qr-download">
+                                    </a>
+                                    <a href="" class="header__qrcode-link">
+                                        <img src="./assets/img/appgallery.png" alt="appgallery"
+                                            class="header__qr-download">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <span class="no_pointer">Kết Nối</span>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fab fa-facebook"></i>
+                            </a>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fab fa-instagram"></i>
+                            </a>
+
+                        </li>
+                    </ul>
+
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-notification">
+                            <i class="header__navbar-icon far fa-bell"></i>
+                            Thông Báo
+                            <div class="header__notification">
+                                <img src="./assets/img/report.png" alt="" class="header__notification-img">
+                                <p class="header__notification-p">Đăng nhập để xem thông báo</p>
+                                <div class="notification-link">
+                                    <a href="" class="header__notification-link">Đăng Nhập</a>
+                                    <a href="" class="header__notification-link">Đăng Ký</a>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon far fa-circle-question"></i>
+                                Hỗ Trợ
+                            </a>
+                        </li>
+                        <li class="header__navbar-item header__navbar-item-language">
+                            <i class="header__navbar-icon far fa-globe"></i>
+                            <span>Tiếng Việt</span>
+                            <i class="header__navbar-icon fa-light fa-angle-down"></i>
+                            <div class="header__navbar-language">
+                                <span class="language__select">Tiếng Việt</span>
+                                <span class="language__select">Tiếng Anh</span>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" id="login_link"
+                                class="header__navbar-item-link header__navbar-item-link--strong header__navbar-item--separate">
+                                Đăng Ký
+                            </a>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" id="regist_link"
+                                class="header__navbar-item-link header__navbar-item-link--strong">Đăng Nhập</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="nav__brands">
+                    <div class="nav__brands__logo">
+                        <img src="./assets/img/logo.png" alt="" class="brands__logo">
+                    </div>
+                    <div class="nav__brands__searchbar">
+                        <form action="" class="brands__searchbar">
+                            <input type="text" placeholder="Tìm sản phẩm, thương hiệu, và tên shop">
+                            <i class="fa-regular fa-magnifying-glass"></i>
+                        </form>
+                        <ul class="searchbar-list">
+                            <li class="searchbar-items">Ruốc Cá Hạ Long</li>
+                            <li class="searchbar-items">Dây Sạc iPhone</li>
+                            <li class="searchbar-items">Áo Manchester United</li>
+                            <li class="searchbar-items">Cmk75sam</li>
+                            <li class="searchbar-items">Dao Cà Rốt</li>
+                            <li class="searchbar-items">Keycap Astronot V2</li>
+                            <li class="searchbar-items">Keycap Fl-esport</li>
+                            <li class="searchbar-items">SSD</li>
+                            <li class="searchbar-items">Quần </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="containner">
+
+        </div>
+
+        <footer class="footer">
+
+        </footer>
+
+        <!-- Modal build -->
+        <div id="modal_form" class="modal" style="display: none;">
+            <div id="modal__body-id" class="modal__overlay"></div>
+            <div id="modal_form_body" class="modal__body">
+                <div class="modal__inner">
+
+                    <!-- Authen form -->
+                    <div id="login" class="login-form">
+                        <h3>Đăng ký</h3>
+                        <div class="login-form__form">
+                            <div class="login-form__group">
+                                <input type="text" id="phoneNumber" class="login-form-input"
+                                    placeholder="Số điện thoại">
+                            </div>
+                            <div class="login-form__controls">
+                                <button id="valid-btn" class="btn">TIẾP THEO</button>
+                            </div>
+
+                            <div class="login-form__moreinfo">
+                                <hr style="width: 40%; border-style: solid; margin: 0;">
+                                <p style="width: 10%;">Hoặc</p>
+                                <hr style="width: 40%; border-style: solid; margin: 0;">
+                            </div>
+
+                            <div class="login-form__socials">
+                                <a href="" class="btn--with-icon">
+                                    <i class="fa-brands fa-facebook"
+                                        style="color: #175fd3; padding-right: 10px; font-size: 2.2rem;"></i>
+                                    Facebook
+                                </a>
+                                <a href="" class="btn--with-icon">
+                                    <i class="fab fa-google" style="padding-right: 10px; font-size: 2.2rem;"></i>
+                                    Google
+                                </a>
+                            </div>
+
+                            <div class="login-form__description">
+                                <p class="login-form__policy-text">
+                                    Bằng việc đăng kí, bạn đã đồng ý với Shopee về
+                                    <a href="" class="login-form__link">Điều khoản dịch vụ</a>
+                                    &
+                                    <a href="" class="login-form__link">Chính sách bảo mật</a>
+                                </p>
+                            </div>
+
+                            <div class="login-form__registed">
+                                <p class="login-form__redirected">
+                                    Bạn đã có tài khoản ?
+                                    <a id="direct-link-1" href="" class="login-form__direct">Đăng nhập</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="regist" class="regist-form">
+                        <div class="regist-form--header">
+                            <h3>Đăng nhập</h3>
+                            <div class="regist-form-text">
+                                <p>Đăng nhập với mã QR</p>
+                            </div>
+                            <img src="./assets/img/qr__link.png" alt="" class="regist-form-qr-link">
+                        </div>
+
+                        <div class="login-form__form">
+                            <div class="login-form__group margin-30">
+                                <input type="text" class="login-form-input"
+                                    placeholder="Email/Số điện thoại/Tên đăng nhập">
+                                <span style="padding: 15px; display: block;"></span>
+                                <input type="text" class="login-form-input relative" placeholder="Mật khẩu">
+                                <i class="fa-light fa-eye-slash toggle-password"></i>
+                            </div>
+
+                            <div class="login-form__controls margin-10">
+                                <button id="valid-btn" class="btn">ĐĂNG NHẬP</button>
+                            </div>
+
+                            <div class="login-form-another-link">
+                                <a href="" class="direct">Quên mật khẩu</a>
+                                <a href="" class="direct">Đăng nhập bằng SMS</a>
+                            </div>
+
+                            <div class="login-form__moreinfo">
+                                <hr style="width: 40%; border-style: solid; margin: 0;">
+                                <p style="width: 10%;">Hoặc</p>
+                                <hr style="width: 40%; border-style: solid; margin: 0;">
+                            </div>
+
+                            <div class="login-form__socials">
+                                <a href="" class="btn--with-icon">
+                                    <i class="fa-brands fa-facebook"
+                                        style="color: #175fd3; padding-right: 10px; font-size: 2.2rem;"></i>
+                                    Facebook
+                                </a>
+                                <a href="" class="btn--with-icon">
+                                    <i class="fab fa-google" style="padding-right: 10px; font-size: 2.2rem;"></i>
+                                    Google
+                                </a>
+                            </div>
+
+                            <div class="login-form__registed">
+                                <p class="login-form__redirected">
+                                    Bạn mới biết đến Shopee ?
+                                    <a id="direct-link-2" href="" class="login-form__direct">Đăng ký</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  -->
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
