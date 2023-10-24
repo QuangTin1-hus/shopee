@@ -14,6 +14,25 @@ document.addEventListener('DOMContentLoaded', function loginForm() {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function registForm() {
+  var account = document.getElementById('account');
+  var password = document.getElementById('password');
+  var btnChange = document.getElementById('valid-btn-regist');
+  account.addEventListener('input', function () {
+    // Sử dụng biểu thức chính quy để kiểm tra xem có kí tự khác số không
+    var accountValue = this.value.trim();
+    var passwordValue = password.value.trim();
+    if (/^\d{10}$/.test(accountValue) || accountValue === '' && passwordValue !== '') {
+      this.classList.remove('invalid');
+      btnChange.classList.add('valid');
+    } else {
+      this.classList.add('invalid');
+      btnChange.classList.remove('valid');
+    }
+  });
+});
+
+
 
 document.addEventListener('DOMContentLoaded', function openAndCloseLoginForm() {
   var modal = document.getElementById('modal_form');

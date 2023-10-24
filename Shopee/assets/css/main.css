@@ -225,7 +225,7 @@
 
 .header__navbar-notification:hover .header__notification {
     display: flex;
-
+    z-index: 10;
 }
 
 .header__notification {
@@ -694,6 +694,10 @@ p {
 .valid {
     background-color: #ee4d2d !important;
     opacity: 1 !important;
+}
+
+.valid:active {
+    opacity: 0.8 !important;
 }
 
 .banner {
