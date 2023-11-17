@@ -1,92 +1,90 @@
+const getElement = id => document.getElementById(id);
+
+function isValidEmail(email) {
+  // Biểu thức chính quy để kiểm tra định dạng email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
 document.addEventListener('DOMContentLoaded', function loginForm() {
-  var phoneNumberInput = document.getElementById('phoneNumber');
-  var btnChange = document.getElementById('valid-btn');
-  phoneNumberInput.addEventListener('input', function () {
-    // Sử dụng biểu thức chính quy để kiểm tra xem có kí tự khác số không
+  const email = getElement('email')
+  const btnChange = getElement('valid-btn');
+
+  email.addEventListener('input', function () {
     var inputValue = this.value.trim();
-    if (/^\d{10}$/.test(inputValue) || inputValue === '') {
-      this.classList.remove('invalid');
-      btnChange.classList.add('valid');
-    } else {
-      this.classList.add('invalid');
-      btnChange.classList.remove('valid');
-    }
+    var isValid = isValidEmail(inputValue) || inputValue === '';
+    
+    this.classList.toggle('invalid', !isValid);
+    btnChange.classList.toggle('valid', isValid);
+
   });
 });
 
 document.addEventListener('DOMContentLoaded', function registForm() {
-  var account = document.getElementById('account');
-  var password = document.getElementById('password');
-  var btnChange = document.getElementById('valid-btn-regist');
+  var account = getElement('account');
+  var password = getElement('password');
+  var btnChange = getElement('valid-btn-regist');
+
   account.addEventListener('input', function () {
-    // Sử dụng biểu thức chính quy để kiểm tra xem có kí tự khác số không
+
     var accountValue = this.value.trim();
     var passwordValue = password.value.trim();
-    if (/^\d{10}$/.test(accountValue) || accountValue === '' && passwordValue !== '') {
-      this.classList.remove('invalid');
-      btnChange.classList.add('valid');
-    } else {
-      this.classList.add('invalid');
-      btnChange.classList.remove('valid');
-    }
+
+    var validAccount = isValidEmail(accountValue) || accountValue === '';
+
+    this.classList.toggle('invalid', !isValidEmail);
+    btnChange.classList.toggle('valid', isValidEmail);
+
   });
 });
 
 
-
 document.addEventListener('DOMContentLoaded', function openAndCloseLoginForm() {
-  var modal = document.getElementById('modal_form');
-  var outForm = document.getElementById('modal__body-id');
-  var modalBody = document.getElementById('modal_form_body');
-  var openLogin = document.getElementById('login_link');
-  var openRegist = document.getElementById('regist_link');
-  var myLogin = document.getElementById('login');
-  var myRegist = document.getElementById('regist')
-  var regist = document.getElementById('direct-link-1');
-  var login = document.getElementById('direct-link-2');
+
+  const modal = getElement('modal_form');
+  const modalBody = getElement('modal_form_body');
+  const myLogin = getElement('login');
+  const myRegist = getElement('regist');
+
+  const setDisplayStyle = (element, displayValue) => element.style.display = displayValue;
+  const block = element => setDisplayStyle(element, 'block');
+  const none = element => setDisplayStyle(element, 'none');
+  const addClass = (element, className, add) => element.classList.toggle(className, add);
+
+  const toggleForm = (showElement, hideElement, add) => {
+    event.preventDefault();
+    modal.style.display = 'block';
+    block(showElement);
+    none(hideElement);
+    addClass(modalBody, 'new-height', add);
+  };
+
   // Thêm sự kiện click vào thẻ <a>
 
-  //Mở form đăng kí
-  openLogin.addEventListener('click', function () {
-    event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ <a>
-    modal.style.display = 'block';
-    myRegist.style.display = 'none';
-    modalBody.classList.remove('new-height');
+  // Mở form đăng nhập
+  getElement('login_link').addEventListener('click', function () {
+    toggleForm(myLogin, myRegist, false);
   });
 
-  //Mở form đăng nhập
-  openRegist.addEventListener('click', function () {
-    event.preventDefault();
-    modal.style.display = 'block';
-    myLogin.style.display = 'none';
-    modalBody.classList.add('new-height');
+  // Mở form đăng kí
+  getElement('regist_link').addEventListener('click', function () {
+    toggleForm(myRegist, myLogin, true);
   });
 
-  //Chuyển hướng sang form đăng nhập
-  regist.addEventListener('click', function () {
-    event.preventDefault();
-    modal.style.display = 'block';
-    myLogin.style.display = 'none';
-    myRegist.style.display = 'block';
-    modalBody.classList.add('new-height');
+  // Chuyển hướng sang form đăng nhập
+  getElement('direct-link-1').addEventListener('click', function () {
+    toggleForm(myRegist, myLogin, true);
   });
 
-  //Chuyển hướng sang form đăng kí
-  login.addEventListener('click', function () {
-    event.preventDefault();
-    modal.style.display = 'block';
-    myLogin.style.display = 'block';
-    myRegist.style.display = 'none';
-    modalBody.classList.remove('new-height');
+  // Chuyển hướng sang form đăng kí
+  getElement('direct-link-2').addEventListener('click', function () {
+    toggleForm(myLogin, myRegist, false);
   });
 
-  //Đóng form
-  outForm.addEventListener('click', function () {
+  // Đóng form
+  getElement('modal__body-id').addEventListener('click', function () {
     event.preventDefault();
     modal.style.display = 'none';
-    myRegist.style.display = 'block';
-    myLogin.style.display = 'block';
-    modalBody.classList.remove('new-height');
+    addClass(modalBody, 'new-height', false);
   });
-
 });
