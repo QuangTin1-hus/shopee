@@ -1,0 +1,63 @@
+[
+    {
+        "id": "1",
+        "image": "123",
+        "name" : "Sạc Aukey chính hãng giá rẻ",
+        "price": "300.000đ",
+        "selled": "2.3k",
+        "discount-top": "30%",
+        "discount-bottom": "10%",
+        "empty": true
+    },
+
+    {
+        "id": "2",
+        "image": "123",
+        "name" : "Dầu gọi dược liệu Nguyên Xuân - chống rụng tóc hiệu quả",
+        "price": "120.000đ",
+        "selled": "10.2k",
+        "discount-top": "40%",
+        "discount-bottom": "15%",
+        "empty": true
+    },
+    {
+        "id": "3",
+        "image": "123",
+        "name" : "Đèn ngủ BIG HERO SIX - BAYMAX",
+        "price": "280.000đ",
+        "selled": "8.2k",
+        "discount-top": "20%",
+        "discount-bottom": "5%",
+        "empty": true
+    },
+    {
+        "id": "4",
+        "image": "123",
+        "name" : "Áo đấu sân khách Manchester United mùa giải 2022-2023",
+        "price": "300.000đ",
+        "selled": "9.5k",
+        "discount-top": "25%",
+        "discount-bottom": "30%",
+        "empty": true
+    },
+    {
+        "id": "5",
+        "image": "123",
+        "name" : "Đền học thương hiệu Baseus",
+        "price": "290.000đ",
+        "selled": "4.2k",
+        "discount-top": "10%",
+        "discount-bottom": "8%",
+        "empty": true
+    },
+    {
+        "id": "6",
+        "image": "123",
+        "name" : "Sạc Baseus giá rẻ",
+        "price": "170.000đ",
+        "selled": "12.3k",
+        "discount-top": "10%",
+        "discount-bottom": "15%",
+        "empty": true
+    }
+]
